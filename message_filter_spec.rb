@@ -13,7 +13,7 @@ describe MessageFilter do
     before { @filter = MessageFilter.new('foo') }
     it_should_behave_like 'MessageFilter with arggment "foo"'
     it 'ng_words should not be empty' do
-      expect(@filter.ng_words.empty?).to be_falsy
+      expect(@filter.ng_words).not_to be_empty
     end
   end
 
