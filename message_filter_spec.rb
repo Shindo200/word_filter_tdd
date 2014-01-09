@@ -13,6 +13,9 @@ describe MessageFilter do
   context 'with argument "foo"' do
     before { @filter = MessageFilter.new('foo') }
     it_should_behave_like 'MessageFilter with arggment "foo"'
+    it 'ng_words size is 1' do
+      expect(@filter.ng_words.size).to eq 1
+    end
   end
 
   context 'with argument "foo","bar"' do
