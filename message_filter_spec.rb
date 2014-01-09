@@ -12,6 +12,9 @@ describe MessageFilter do
   context 'with argument "foo"' do
     before { @filter = MessageFilter.new('foo') }
     it_should_behave_like 'MessageFilter with arggment "foo"'
+    it 'ng_words should not be empty' do
+      expect(@filter.ng_words.empty?).to be_falsy
+    end
   end
 
   context 'with argument "foo","bar"' do
