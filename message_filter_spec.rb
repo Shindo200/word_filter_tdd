@@ -9,12 +9,12 @@ describe MessageFilter do
     it { expect(@filter).not_to be_detect('hello, world') }
   end
 
-  describe 'with argument "foo"' do
+  context 'with argument "foo"' do
     before { @filter = MessageFilter.new('foo') }
     it_should_behave_like 'MessageFilter with arggment "foo"'
   end
 
-  describe 'with argument "foo","bar"' do
+  context 'with argument "foo","bar"' do
     before { @filter = MessageFilter.new('foo', 'bar') }
     it { expect(@filter).to be_detect('hello from bar') }
     it_should_behave_like 'MessageFilter with arggment "foo"'
